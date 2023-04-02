@@ -47,7 +47,7 @@ public:
             Reg_file<<" "<<Last_Name;
             cout<<"\t\tEMAIL          : ";
             cin>>Email;
-            Reg_file<<"\nUSER EMAIL: "<<endl;
+            Reg_file<<"\nUSER EMAIL: ";
             Reg_file<<Email;
             cout<<"\t\tID No.         : ";
             cin>>Id;
@@ -55,7 +55,7 @@ public:
             Reg_file<<Id;
             cout<<"\t\tPASSWORD       : ";
             cin>>Password;
-            Reg_file<<"\nPASSWORD  : "<<endl;
+            Reg_file<<"\nPASSWORD  : ";
             Reg_file<<Password<<endl;
 
             Reg_file.close();
@@ -216,13 +216,109 @@ public:
 class Sub_menu_page : public Registration_page
 {
 public:
+    string Pf_Name, Pl_Name, Gender,Next_of_kin_name; 
+    int Age, P_phone, Next_of_kin_phone,P_Id;
+    string P_diagnostics, P_prescription, t_date;
     void Add_patient()
     {
+        fstream Add_file;
+        Add_file.open("patient_records.txt",ios::app);
 
+        if(!Add_file.is_open())
+        {
+            system("cls");
+            cout<<"\t\t\tSORRY, ERROR ACCESSING PATIENT RECORDS!!"<<endl;
+            Main_menu();
+        }
+        else
+        {
+            cout<<"\t\tEnter Patient details below:";
+            cout<<"\t\tFIRST NAME       : ";
+            cin>>Pf_Name;
+            Add_file<<"PATIENT NAME             : ";
+            Add_file<<Pf_Name;
+            cout<<"\t\tLAST NAME        : ";
+            cin>>Pl_Name;
+            Add_file<<" "<<Pl_Name;
+
+            cout<<"\t\tID NUMBER        : ";
+            cin>>P_Id;
+            Add_file<<"\nID NUMBER              : ";
+            Add_file<<P_Id;
+
+            cout<<"\t\tGENDER           : ";
+            cin>>Gender;
+            Add_file<<"\nGENDER                 : ";
+            Add_file<<Gender;
+
+            cout<<"\t\tAGE               : ";
+            cin>>Age;
+            Add_file<<"\nAGE                    : ";
+            Add_file<<Age;
+
+            cout<<"\t\tPHONE NUMBER      : ";
+            cin>>P_phone;
+            Add_file<<"\nPHONE NUMBER           : ";
+            Add_file<<P_phone;
+
+            cout<<"\t\tNEXT OF KIN NAME  : ";
+            cin>>Next_of_kin_name;
+            Add_file<<"\nNEXT OF KIN NAME       : ";
+            Add_file<<Next_of_kin_name;
+            cout<<"\t\tNEXT OF KIN PHONE : ";
+            cin>>Next_of_kin_phone;
+            Add_file<<"\nNEXT OF KIN PHONE      : ";
+            Add_file<<Next_of_kin_phone;
+
+            cout<<"\t\tEnter Diagnostic details below.\n";
+            cout<<"\t\tDESCRIBE SICKNESS :";
+            getline(cin,P_diagnostics);
+            Add_file<<"\nSICKNESS DESCRIPTION   : ";
+            Add_file<<P_diagnostics;
+
+            cout<<"\t\tPRESCRIPTION      :";
+            getline(cin,P_prescription);
+            Add_file<<"\nPRESCRIPTION           : ";
+            Add_file<<P_prescription;
+
+            cout<<"\t\tDATE OF TREATMENT :";
+            getline(cin,t_date);
+            Add_file<<"\nDATE OF TREATMENT      : ";
+            Add_file<<t_date;
+
+
+            Add_file.close();
+
+        } 
     }
+
 
     void Acc_patient()
     {
+        fstream Acc_file;
+        Acc_file.open("patient_records.txt",ios::in);
+
+        if(!Acc_file.is_open())
+        {
+            system("cls");
+            cout<<"\t\t\tSORRY, ERROR ACCESSING PATIENT RECORDS!!"<<endl;
+            Main_menu();
+        }
+        else
+        {
+            system("cls");
+            cout<<"\t\t\t________________________________________________\n\n"<<endl;
+            cout<<"\t\t\t            HOPE HOSPITAL RECORDS              \n\n\n"<<endl;
+            cout<<"\t\t\t_____________                 __________________\n\n"<<endl;
+            cout<<"                                                       \n\n"<<endl;
+            string p_line;
+            while(getline(Acc_file,p_line))
+            {
+                cout<<"\t\tTHE FOLLOWING SHOWS THE PATIENT RECORDS."<<endl;
+                cout<<"\t\t\t\t"<<p_line<<endl;
+            }
+            Acc_file.close();            
+        }
 
     }
     void Acc_staff()
@@ -230,7 +326,13 @@ public:
         fstream Reg_file;
         Reg_file.open("registration_file.txt",ios::in);
 
-        if(Reg_file.is_open())
+        if(!Reg_file.is_open())
+        {
+            system("cls");
+            cout<<"\t\t\tSORRY, ERROR ACCESSING STAFF RECORDS!!"<<endl;
+            Main_menu();
+        }
+        else
         {
             system("cls");
             cout<<"\t\t\t________________________________________________\n\n"<<endl;
@@ -300,7 +402,6 @@ public:
 class Login_page: public Registration_page
 {
 public:
-
     void login()
     {
         string email, pass, user_em, user_pass;
@@ -318,7 +419,8 @@ public:
 
             int count;
             fstream Reg_file;
-            Reg_file.open("registration_file.txt", ios::in);//Read mode from the file        
+            Reg_file.open("registration_file.txt", ios::in);//Read mode from the file
+
             while(Reg_file>>user_em>>user_pass)
             {
                 if(user_em==email && user_pass==pass)
@@ -343,8 +445,6 @@ public:
                 cout<<"\n\t\t\tSORRY, LOGIN ERROR. \n\t\t\tKINDLY CHECK YOUR LOGIN EMAIL OR PASSWORD."<<endl;
                 Main_menu();
             }
-
-               
             
         static int choice_f;
 
@@ -369,8 +469,7 @@ public:
 
             break;
             default:
-
-            
+            break;           
         }
     }
 };

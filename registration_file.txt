@@ -1,7 +1,6 @@
-USER NAME : Daniel Maithya
-USER EMAIL: daniel@gmail.com
-USER ID   : 123456
-PASSWORD  : 123456
-DESIGNATION : Doctor
-	SPECIALTY : Ophthalmologist
+USER NAME : daniel maithya
+USER EMAIL: dmaithya@gmail.com
+USER ID   : 12345
+PASSWORD  : 123412
+DESIGNATION : Support Staff
 
