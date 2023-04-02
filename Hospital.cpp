@@ -28,7 +28,7 @@ public:
     {
         system("cls");
         cout<<"\t\t\t________________________________________________\n\n"<<endl;
-        cout<<"\t\t\t          FAHARI HOSPITAL RECORDS              \n\n\n"<<endl;
+        cout<<"\t\t\t           HOPE HOSPITAL RECORDS              \n\n\n"<<endl;
         cout<<"\t\t\t     WELCOME TO THE REGISTRATION PAGE\n\n"<<endl;
         cout<<"\t\t\t_____________                 __________________\n\n"<<endl;
         cout<<"                                                       \n\n"<<endl;
@@ -47,7 +47,7 @@ public:
             Reg_file<<" "<<Last_Name;
             cout<<"\t\tEMAIL          : ";
             cin>>Email;
-            Reg_file<<"\nUSER EMAIL: ";
+            Reg_file<<"\nUSER EMAIL: "<<endl;
             Reg_file<<Email;
             cout<<"\t\tID No.         : ";
             cin>>Id;
@@ -55,7 +55,7 @@ public:
             Reg_file<<Id;
             cout<<"\t\tPASSWORD       : ";
             cin>>Password;
-            Reg_file<<"\nPASSWORD  : ";
+            Reg_file<<"\nPASSWORD  : "<<endl;
             Reg_file<<Password<<endl;
 
             Reg_file.close();
@@ -127,7 +127,7 @@ public:
                             if(choice_d==1)
                             {
                                 system("cls");
-                                cout<<"\t\t\tTHANK YOU FOR REGISTERING WITH THE FAHARI HOSPITAL RECORDS\n"<<endl;
+                                cout<<"\t\t\tTHANK YOU FOR REGISTERING WITH THE HOPE HOSPITAL RECORDS\n"<<endl;
                                 cout<<"\t\t\t           YOUR DETAILS ARE SAFE WITH US"<<endl;
                                 
                                 Main_menu();
@@ -135,7 +135,7 @@ public:
                             else if (choice_d==2)
                             {
                                 system("cls");
-                                cout<<"\t\t\tTHANK YOU FOR REGISTERING WITH THE FAHARI HOSPITAL RECORDS\n"<<endl;
+                                cout<<"\t\t\tTHANK YOU FOR REGISTERING WITH THE HOPE HOSPITAL RECORDS\n"<<endl;
                                 cout<<"\t\t\t           YOUR DETAILS ARE SAFE WITH US"<<endl;
                                 
                                 Main_menu();
@@ -143,7 +143,7 @@ public:
                             else if (choice_d==3)
                             {
                                 system("cls");
-                                cout<<"\t\t\tTHANK YOU FOR REGISTERING WITH THE FAHARI HOSPITAL RECORDS\n"<<endl;
+                                cout<<"\t\t\tTHANK YOU FOR REGISTERING WITH THE HOPE HOSPITAL RECORDS\n"<<endl;
                                 cout<<"\t\t\t           YOUR DETAILS ARE SAFE WITH US"<<endl;
                                 
                                 Main_menu();
@@ -151,7 +151,7 @@ public:
                             else if (choice_d==4)
                             {
                                 system("cls");
-                                cout<<"\t\t\tTHANK YOU FOR REGISTERING WITH THE FAHARI HOSPITAL RECORDS\n"<<endl;
+                                cout<<"\t\t\tTHANK YOU FOR REGISTERING WITH THE HOPE HOSPITAL RECORDS\n"<<endl;
                                 cout<<"\t\t\t           YOUR DETAILS ARE SAFE WITH US"<<endl;
                                 
                                 Main_menu();
@@ -171,7 +171,7 @@ public:
                         }Reg_file.close();
 
                         system("cls");
-                        cout<<"\t\t\tTHANK YOU FOR REGISTERING WITH THE FAHARI HOSPITAL RECORDS\n"<<endl;
+                        cout<<"\t\t\tTHANK YOU FOR REGISTERING WITH THE HOPE HOSPITAL RECORDS\n"<<endl;
                         cout<<"\t\t\t           YOUR DETAILS ARE SAFE WITH US"<<endl;
                         
                         Main_menu();
@@ -184,7 +184,7 @@ public:
                         }Reg_file.close();
 
                         system("cls");
-                        cout<<"\t\t\tTHANK YOU FOR REGISTERING WITH THE FAHARI HOSPITAL RECORDS\n"<<endl;
+                        cout<<"\t\t\tTHANK YOU FOR REGISTERING WITH THE HOPE HOSPITAL RECORDS\n"<<endl;
                         cout<<"\t\t\t           YOUR DETAILS ARE SAFE WITH US"<<endl;
                         
                         Main_menu();
@@ -197,7 +197,7 @@ public:
                         }Reg_file.close();
 
                         system("cls");
-                        cout<<"\t\t\tTHANK YOU FOR REGISTERING WITH THE FAHARI HOSPITAL RECORDS\n"<<endl;
+                        cout<<"\t\t\tTHANK YOU FOR REGISTERING WITH THE HOPE HOSPITAL RECORDS\n"<<endl;
                         cout<<"\t\t\t           YOUR DETAILS ARE SAFE WITH US"<<endl;
                         Main_menu();
                         break;
@@ -213,23 +213,100 @@ public:
         }  
 };
 
-class Sub_menu_page
+class Sub_menu_page : public Registration_page
 {
 public:
-    void sub_menu();
+    void Add_patient()
+    {
+
+    }
+
+    void Acc_patient()
+    {
+
+    }
+    void Acc_staff()
+    {
+        fstream Reg_file;
+        Reg_file.open("registration_file.txt",ios::in);
+
+        if(Reg_file.is_open())
+        {
+            system("cls");
+            cout<<"\t\t\t________________________________________________\n\n"<<endl;
+            cout<<"\t\t\t            HOPE HOSPITAL RECORDS              \n\n\n"<<endl;
+            cout<<"\t\t\t_____________                 __________________\n\n"<<endl;
+            cout<<"                                                       \n\n"<<endl;
+            string line;
+            while(getline(Reg_file,line))
+            {
+                cout<<"\t\tThe following shows the list of Staff names and their designations"<<endl;
+                cout<<"\t\t\t\t"<<line<<endl;
+            }
+            Reg_file.close();            
+        }
+            
+    }
+    void sub_menu()
+    {
+        static int choice_sm;
+        system("cls");
+        cout<<"\t\t\t________________________________________________\n\n"<<endl;
+        cout<<"\t\t\t            HOPE HOSPITAL RECORDS              \n\n\n"<<endl;
+        cout<<"\t\t\t_____________                 __________________\n\n"<<endl;
+        cout<<"                                                       \n\n"<<endl;
+        cout<<"\t\t\t1. Add Patient records. \n"<<endl;
+        cout<<"\t\t\t2. Access Patient records. \n"<<endl;
+        cout<<"\t\t\t3. Access staff records. \n"<<endl;
+        cout<<"\t\t\t4. EXIT. \n\n"<<endl;
+        cout<<"\t\tEnter choice here :  \n"<<endl;
+        cin>>choice_sm;
+
+        switch(choice_sm)
+        {
+            case 1:
+            {
+                Add_patient();
+                break;
+            }
+            case 2:
+            {
+                Acc_patient();
+                break;
+            }
+            case 3:
+            {
+                Acc_staff();
+                break;
+            }
+            case 4:
+            {
+                Main_menu();
+                break;
+            }
+            default:
+            {
+                cout<<"Kindly enter a valid choice."<<endl;
+                sub_menu();
+
+            }
+        }
+
+
+    }
     
 };
 
-class Login_page: public Registration_page 
+class Login_page: public Registration_page
 {
 public:
-    string email, pass;
-    
+
     void login()
     {
+        string email, pass, user_em, user_pass;
         system("cls");
         cout<<"\t\t\t________________________________________________\n\n"<<endl;
-        cout<<"\t\t\t          FAHARI HOSPITAL RECORDS              \n\n\n"<<endl;
+        cout<<"\t\t\t            HOPE HOSPITAL RECORDS              \n\n\n"<<endl;
         cout<<"\t\t\t         WELCOME TO THE LOGIN PAGE\n\n"<<endl;
         cout<<"\t\t\t_____________                 __________________\n\n"<<endl;
         cout<<"\t\tPlease enter your login details below. \n"<<endl;
@@ -239,33 +316,36 @@ public:
         cin>>pass;
         //(Password and email authentication at this point )
 
-        static int count;
-
-        ifstream det_authent("registration_file.txt");
-        while(det_authent>>Email>>Password)
-        {
-            if(Email==email && Password==pass)
+            int count;
+            fstream Reg_file;
+            Reg_file.open("registration_file.txt", ios::in);//Read mode from the file        
+            while(Reg_file>>user_em>>user_pass)
             {
-                count=1;
-                system("cls");
-            }
-        }
-        det_authent.close();
+                if(user_em==email && user_pass==pass)
+                {
+                    count=1;
+                }
 
-        Sub_menu_page sub;
-        if(count==1)
-        {
-            system("cls");
-            cout<<email<<"\n\t\t\tCONGRATULATIONS!!! YOUR LOGIN IS SUCCESSFUL. \n THANK YOU FOR LOGGING IN.\n";
-            sub.sub_menu();
-        }
-        else
-        {
-            system("cls");
-            cout<<"\n\t\t\tSORRY, LOGIN ERROR. \n\t\t\tKINDLY CHECK YOUR LOGIN EMAIL OR PASSWORD."<<endl;
-            Main_menu();
+            }
+            Reg_file.close();
             
-        }
+            if(count==1)
+            {
+                system("cls");
+                cout<<email<<"\n\t\t\tCONGRATULATIONS!!! YOUR LOGIN IS SUCCESSFUL. \n THANK YOU FOR LOGGING IN.\n";
+                Sub_menu_page sub;
+                sub.sub_menu();
+                
+            }
+            else
+            {
+                system("cls");
+                cout<<"\n\t\t\tSORRY, LOGIN ERROR. \n\t\t\tKINDLY CHECK YOUR LOGIN EMAIL OR PASSWORD."<<endl;
+                Main_menu();
+            }
+
+               
+            
         static int choice_f;
 
         cout<<"\n\n\t\tForgot your password? Not registered?"<<endl;
@@ -277,7 +357,7 @@ public:
         cin>>choice_f;
         cout<<endl;
 
-       /* switch(choice_f)
+        switch(choice_f)
         {
             case 1:
 
@@ -291,7 +371,7 @@ public:
             default:
 
             
-        }*/
+        }
     }
 };
 
@@ -300,7 +380,7 @@ void Main_menu()
     static  int choice;
 
     cout<<"\t\t\t________________________________________________\n\n"<<endl;
-    cout<<"\t\t\t          FAHARI HOSPITAL RECORDS              \n\n\n"<<endl;
+    cout<<"\t\t\t           HOPE HOSPITAL RECORDS              \n\n\n"<<endl;
     cout<<"\t\t\t         WELCOME TO THE LOGIN PAGE              \n\n"<<endl;
     cout<<"\t\t\t                   MENU                           \n"<<endl;
     cout<<"\t\t\t_____________                 __________________\n\n"<<endl;
@@ -344,6 +424,4 @@ int main()
 
     system("pause>null");
 }
-void Sub_menu_page::sub_menu()
-{
-}
+
