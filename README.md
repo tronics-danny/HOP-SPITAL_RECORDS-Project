@@ -1,2 +1,2 @@
-# HOSPITAL_RECORDS-Project
+# HOP-SPITAL_RECORDS-Project
 This is a Cpp Hospital based records system
