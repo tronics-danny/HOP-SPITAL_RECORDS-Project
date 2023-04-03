@@ -47,7 +47,7 @@ public:
             Reg_file<<" "<<Last_Name;
             cout<<"\t\tEMAIL          : ";
             cin>>Email;
-            Reg_file<<"\nUSER EMAIL: ";
+            Reg_file<<"\nUSER EMAIL: "<<endl;
             Reg_file<<Email;
             cout<<"\t\tID No.         : ";
             cin>>Id;
@@ -55,7 +55,7 @@ public:
             Reg_file<<Id;
             cout<<"\t\tPASSWORD       : ";
             cin>>Password;
-            Reg_file<<"\nPASSWORD  : ";
+            Reg_file<<"\nPASSWORD  : "<<endl;
             Reg_file<<Password<<endl;
 
             Reg_file.close();
@@ -216,11 +216,17 @@ public:
 class Sub_menu_page : public Registration_page
 {
 public:
-    string Pf_Name, Pl_Name, Gender,Next_of_kin_name; 
+    string Pf_Name, Pl_Name, Gender,Next_of_kin_Fname,Next_of_kin_Sname; 
     int Age, P_phone, Next_of_kin_phone,P_Id;
     string P_diagnostics, P_prescription, t_date;
+    //void sub_menu();
     void Add_patient()
     {
+        cout<<"\t\t\t________________________________________________\n\n"<<endl;
+        cout<<"\t\t\t            HOPE HOSPITAL RECORDS              \n\n\n"<<endl;
+        cout<<"\t\t\t_____________                 __________________\n\n"<<endl;
+        cout<<"                                                       \n\n"<<endl;
+
         fstream Add_file;
         Add_file.open("patient_records.txt",ios::app);
 
@@ -232,63 +238,66 @@ public:
         }
         else
         {
-            cout<<"\t\tEnter Patient details below:";
+            cout<<"\t\tEnter Patient details below."<<endl;
             cout<<"\t\tFIRST NAME       : ";
             cin>>Pf_Name;
-            Add_file<<"PATIENT NAME             : ";
+            Add_file<<"\n\nPATIENT NAME           : ";
             Add_file<<Pf_Name;
-            cout<<"\t\tLAST NAME        : ";
+            cout<<"\n\t\tLAST NAME        : ";
             cin>>Pl_Name;
             Add_file<<" "<<Pl_Name;
 
-            cout<<"\t\tID NUMBER        : ";
+            cout<<"\n\t\tID NUMBER        : ";
             cin>>P_Id;
             Add_file<<"\nID NUMBER              : ";
             Add_file<<P_Id;
 
-            cout<<"\t\tGENDER           : ";
+            cout<<"\n\t\tGENDER           : ";
             cin>>Gender;
             Add_file<<"\nGENDER                 : ";
             Add_file<<Gender;
 
-            cout<<"\t\tAGE               : ";
+            cout<<"\n\t\tAGE               : ";
             cin>>Age;
             Add_file<<"\nAGE                    : ";
             Add_file<<Age;
 
-            cout<<"\t\tPHONE NUMBER      : ";
+            cout<<"\n\t\tPHONE NUMBER      : ";
             cin>>P_phone;
             Add_file<<"\nPHONE NUMBER           : ";
             Add_file<<P_phone;
 
-            cout<<"\t\tNEXT OF KIN NAME  : ";
-            cin>>Next_of_kin_name;
-            Add_file<<"\nNEXT OF KIN NAME       : ";
-            Add_file<<Next_of_kin_name;
-            cout<<"\t\tNEXT OF KIN PHONE : ";
+            cout<<"\n\t\tNEXT OF KIN FIRST NAME   : ";
+            cin>>Next_of_kin_Fname;
+            Add_file<<"\nNEXT OF KIN FIRST NAME : ";
+            Add_file<<Next_of_kin_Fname;
+            cout<<"\n\t\tNEXT OF KIN SECOND NAME  : ";
+            cin>>Next_of_kin_Sname;
+            Add_file<<"\nNEXT OF KIN SECOND NAME: ";
+            Add_file<<Next_of_kin_Sname;
+            cout<<"\n\t\tNEXT OF KIN PHONE : ";
             cin>>Next_of_kin_phone;
             Add_file<<"\nNEXT OF KIN PHONE      : ";
             Add_file<<Next_of_kin_phone;
 
-            cout<<"\t\tEnter Diagnostic details below.\n";
+            cout<<"\n\t\tEnter Diagnostic details below.\n";
             cout<<"\t\tDESCRIBE SICKNESS :";
             getline(cin,P_diagnostics);
             Add_file<<"\nSICKNESS DESCRIPTION   : ";
             Add_file<<P_diagnostics;
 
-            cout<<"\t\tPRESCRIPTION      :";
+            cout<<"\n\t\tPRESCRIPTION      :";
             getline(cin,P_prescription);
             Add_file<<"\nPRESCRIPTION           : ";
             Add_file<<P_prescription;
 
-            cout<<"\t\tDATE OF TREATMENT :";
+            cout<<"\n\t\tDATE OF TREATMENT :";
             getline(cin,t_date);
             Add_file<<"\nDATE OF TREATMENT      : ";
             Add_file<<t_date;
 
-
             Add_file.close();
-
+            sub_menu();
         } 
     }
 
@@ -312,10 +321,12 @@ public:
             cout<<"\t\t\t_____________                 __________________\n\n"<<endl;
             cout<<"                                                       \n\n"<<endl;
             string p_line;
+            cout<<"\t\tTHE FOLLOWING SHOWS THE PATIENT RECORDS."<<endl;
+            
             while(getline(Acc_file,p_line))
             {
-                cout<<"\t\tTHE FOLLOWING SHOWS THE PATIENT RECORDS."<<endl;
                 cout<<"\t\t\t\t"<<p_line<<endl;
+                
             }
             Acc_file.close();            
         }
@@ -361,33 +372,38 @@ public:
         cout<<"\t\t\t2. Access Patient records. \n"<<endl;
         cout<<"\t\t\t3. Access staff records. \n"<<endl;
         cout<<"\t\t\t4. EXIT. \n\n"<<endl;
-        cout<<"\t\tEnter choice here :  \n"<<endl;
+        cout<<"\t\tEnter choice here : ";
         cin>>choice_sm;
 
         switch(choice_sm)
         {
             case 1:
             {
+                system("cls");
                 Add_patient();
                 break;
             }
             case 2:
             {
+                system("cls");
                 Acc_patient();
                 break;
             }
             case 3:
             {
+                system("cls");
                 Acc_staff();
                 break;
             }
             case 4:
             {
+                system("cls");
                 Main_menu();
                 break;
             }
             default:
             {
+                system("cls");
                 cout<<"Kindly enter a valid choice."<<endl;
                 sub_menu();
 
@@ -404,7 +420,7 @@ class Login_page: public Registration_page
 public:
     void login()
     {
-        string email, pass, user_em, user_pass;
+        string user_email, user_pass;
         system("cls");
         cout<<"\t\t\t________________________________________________\n\n"<<endl;
         cout<<"\t\t\t            HOPE HOSPITAL RECORDS              \n\n\n"<<endl;
@@ -412,66 +428,57 @@ public:
         cout<<"\t\t\t_____________                 __________________\n\n"<<endl;
         cout<<"\t\tPlease enter your login details below. \n"<<endl;
         cout<<"\t\tEMAIL     : ";
-        cin>>email;
+        cin>>user_email;
         cout<<"\t\tPASSWORD  : ";
-        cin>>pass;
+        cin>>user_pass;       
+
         //(Password and email authentication at this point )
-
-            int count;
-            fstream Reg_file;
-            Reg_file.open("registration_file.txt", ios::in);//Read mode from the file
-
-            while(Reg_file>>user_em>>user_pass)
-            {
-                if(user_em==email && user_pass==pass)
-                {
-                    count=1;
-                }
-
-            }
-            Reg_file.close();
             
-            if(count==1)
-            {
-                system("cls");
-                cout<<email<<"\n\t\t\tCONGRATULATIONS!!! YOUR LOGIN IS SUCCESSFUL. \n THANK YOU FOR LOGGING IN.\n";
-                Sub_menu_page sub;
-                sub.sub_menu();
-                
-            }
-            else
-            {
-                system("cls");
-                cout<<"\n\t\t\tSORRY, LOGIN ERROR. \n\t\t\tKINDLY CHECK YOUR LOGIN EMAIL OR PASSWORD."<<endl;
-                Main_menu();
-            }
-            
-        static int choice_f;
+        ifstream lg_file;
+        lg_file.open("registration_file.txt");//Read mode from the file
 
-        cout<<"\n\n\t\tForgot your password? Not registered?"<<endl;
-        cout<<"\t\tKindly select from below:"<<endl;
-        cout<<"\t\t\t1. Forgot Password"<<endl;
-        cout<<"\t\t\t2. Register"<<endl;
-        cout<<"\t\t\t3. EXIT"<<endl;
-        cout<<"\t\tEnter your choice : ";
-        cin>>choice_f;
-        cout<<endl;
-
-        switch(choice_f)
+        if(lg_file.is_open())
         {
-            case 1:
-
-            break;
-            case 2:
-
-            break;
-            case 3:
-
-            break;
-            default:
-            break;           
+            system("cls");
         }
-    }
+        else
+        {
+            system("cls");
+            cout<<"Failed to open file"<<endl;
+        }
+        string line, user_em, user_pw;
+        while (!lg_file.eof())
+        {
+            getline(lg_file, line); 
+            if(lg_file.good())
+            {
+                while(line==user_email)
+                {
+                    user_em=line;
+                    break;
+                    
+                }
+                getline(lg_file, line); 
+                while(line==user_pass)
+                {
+                    user_pw=line;
+                    break;
+                }            
+            }
+        }
+        if(user_em==user_email && user_pw==user_pass)
+        {
+            cout<<"\n\t\t\tCONGRATULATIONS!!! YOUR LOGIN IS SUCCESSFUL. \n THANK YOU FOR LOGGING IN.\n";
+            Sub_menu_page sub;
+            sub.sub_menu();
+        }
+        else
+        {
+            cout<<"\n\t\t\tSORRY, LOGIN ERROR. \n\t\t\tKINDLY CHECK YOUR LOGIN EMAIL OR PASSWORD."<<endl;
+            Main_menu();
+        }
+        lg_file.close();
+    } 
 };
 
 void Main_menu()
@@ -498,15 +505,22 @@ void Main_menu()
         switch(choice)
         {
             case 1:
+                system("cls");
                 lp.login();
                 break;
             case 2:
+                system("cls");
                 rp.regis();
                 des.designation();
                 break;
             case 3:
                 system("cls");
-                cout<<"\t\t\t Thank You!";
+                cout<<"\t\t\t________________________________________________\n\n"<<endl;
+                cout<<"\t\t\t                   HOPE HOSPITAL               \n\n"<<endl;
+                cout<<"\t\t\t        \"WHERE THE ART OF MEDICINE IS LOVED, "<<endl;
+                cout<<"\t\t\t         THERE IS ALSO LOVE FOR HUMANITY\"\n\n"<<endl;
+                cout<<"\t\t\t_____________                 __________________\n\n"<<endl;
+                cout<<"\t\t\t                THANK YOU!";
                 break;
             default:
                 system("cls");

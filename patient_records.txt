@@ -1,0 +1,25 @@
+
+
+PATIENT NAME           : Felix Mbusi
+ID NUMBER              : 5678234
+GENDER                 : male
+AGE                    : 27
+PHONE NUMBER           : 789256423
+NEXT OF KIN FIRST NAME        : Fabian
+NEXT OF KIN SECOND NAME       : Munzao
+NEXT OF KIN PHONE      : 745362883
+SICKNESS DESCRIPTION   : 
+PRESCRIPTION           : Stop using drugs they are not doing you good. get warned
+DATE OF TREATMENT      : 12-7-2020
+
+PATIENT NAME           : Felix Mbusi
+ID NUMBER              : 2346728
+GENDER                 : male
+AGE                    : 27
+PHONE NUMBER           : 764532736
+NEXT OF KIN FIRST NAME        : Fabian
+NEXT OF KIN SECOND NAME       : Munya
+NEXT OF KIN PHONE      : 746238192
+SICKNESS DESCRIPTION   : 
+PRESCRIPTION           : qghaUNSUQUWHYNJND NSHnsjqi,qwbuqhdq
+DATE OF TREATMENT      : 12-7-89-12122

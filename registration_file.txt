@@ -1,6 +1,17 @@
 USER NAME : daniel maithya
-USER EMAIL: dmaithya@gmail.com
-USER ID   : 12345
-PASSWORD  : 123412
-DESIGNATION : Support Staff
+USER EMAIL: 
+dmaithya@gmail.com
+USER ID   : 12345678
+PASSWORD  : 
+123412
+DESIGNATION : Nurse 
+
+USER NAME : kelvine chweya
+USER EMAIL: 
+kelvine@gmail.com
+USER ID   : 125672121
+PASSWORD  : 
+432143
+DESIGNATION : Doctor
+	SPECIALTY : Ophthalmologist
 
