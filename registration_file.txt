@@ -1,17 +1,18 @@
-USER NAME : daniel maithya
+
+USER NAME : Daniel Maithya
 USER EMAIL: 
-dmaithya@gmail.com
-USER ID   : 12345678
+daniel@gmail.com
+USER ID   : 34245126
 PASSWORD  : 
-123412
+7654321
 DESIGNATION : Nurse 
 
-USER NAME : kelvine chweya
+USER NAME : Daniel Maithya
 USER EMAIL: 
-kelvine@gmail.com
-USER ID   : 125672121
+daniel@gmail.com
+USER ID   : 665456654
 PASSWORD  : 
-432143
+555555
 DESIGNATION : Doctor
-	SPECIALTY : Ophthalmologist
+SPECIALTY : Dentist
 
