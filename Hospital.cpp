@@ -102,19 +102,19 @@ public:
                             {
                                if(choice_d==1)
                                 {
-                                    Reg_file<<"SPECIALTY : Dentist"<<endl;
+                                    Reg_file<<"\n\tSPECIALTY : Dentist\n\n";
                                 }
                                 else if(choice_d==2)
                                 {
-                                    Reg_file<<"SPECIALTY : Ophthalmologist"<<endl;
+                                    Reg_file<<"\n\tSPECIALTY : Ophthalmologist\n\n";
                                 }
                                 else if(choice_d==3)
                                 {
-                                    Reg_file<<"SPECIALTY : Gynaecologist"<<endl;
+                                    Reg_file<<"\n\tSPECIALTY : Gynaecologist\n\n";
                                 }
                                 else if(choice_d==4)
                                 {
-                                    Reg_file<<"SPECIALTY : Primary Care Physician (PCP)"<<endl;
+                                    Reg_file<<"\n\tSPECIALTY : Primary Care Physician (PCP)\n\n";
                                 }
                                 else
                                 {
@@ -167,7 +167,7 @@ public:
                         Reg_file.open("registration_file.txt", ios::app);
                         if(Reg_file.is_open())
                         {
-                            Reg_file<<"DESIGNATION : Pharmacist"<<endl;
+                            Reg_file<<"DESIGNATION : Pharmacist\n\n";
                         }Reg_file.close();
 
                         system("cls");
@@ -180,7 +180,7 @@ public:
                         Reg_file.open("registration_file.txt", ios::app);
                         if(Reg_file.is_open())
                         {
-                            Reg_file<<"DESIGNATION : Nurse "<<endl;
+                            Reg_file<<"DESIGNATION : Nurse \n\n";
                         }Reg_file.close();
 
                         system("cls");
@@ -193,7 +193,7 @@ public:
                         Reg_file.open("registration_file.txt", ios::app);
                         if(Reg_file.is_open())
                         {
-                            Reg_file<<"DESIGNATION : Support Staff"<<endl;
+                            Reg_file<<"DESIGNATION : Support Staff\n\n";
                         }Reg_file.close();
 
                         system("cls");
@@ -447,8 +447,6 @@ public:
             cout<<"Failed to open file"<<endl;
         }
         string line, user_em, user_pw;
-        int count1=0;
-        int count2=0;
         while (!lg_file.eof())
         {
             getline(lg_file, line); 
@@ -456,35 +454,26 @@ public:
             {
                 while(line==user_email)
                 {
-                    count1=1;
+                    user_em=line;
                     break;
                     
                 }
-            }
-        }
-        while(!lg_file.eof())
-        {
-            if(lg_file.good())
-            {
                 getline(lg_file, line); 
                 while(line==user_pass)
                 {
-                    count2=1;
+                    user_pw=line;
                     break;
-                }
+                }            
             }
-        }                    
-             
-        if(count1==1 && count2==1)
+        }
+        if(user_em==user_email && user_pw==user_pass)
         {
-            system("cls");
             cout<<"\n\t\t\tCONGRATULATIONS!!! YOUR LOGIN IS SUCCESSFUL. \n THANK YOU FOR LOGGING IN.\n";
             Sub_menu_page sub;
             sub.sub_menu();
         }
         else
         {
-            system("cls");
             cout<<"\n\t\t\tSORRY, LOGIN ERROR. \n\t\t\tKINDLY CHECK YOUR LOGIN EMAIL OR PASSWORD."<<endl;
             Main_menu();
         }
