@@ -1,27 +1,19 @@
-USER NAME : daniel Maithya
+
+USER NAME : Daniel Maithya
 USER EMAIL: 
 daniel@gmail.com
-USER ID   : 1234
+USER ID   : 34234565
 PASSWORD  : 
-12311
+danny_maithya
 DESIGNATION : Doctor
-	SPECIALTY : Ophthalmologist
+SPECIALTY : Ophthalmologist
 
-
-USER NAME : John john
+USER NAME : zzw zruti
 USER EMAIL: 
-john@gmail.com
-USER ID   : 1231121
+567809876
+USER ID   : 5670'
 PASSWORD  : 
-343421
-DESIGNATION : Pharmacist
+utiru
+DESIGNATION : Doctor
+SPECIALTY : Dentist
 
-
-
-USER NAME : maithya musali
-USER EMAIL: 
-maithya@gmail.com
-USER ID   : 765434567
-PASSWORD  : 
-234534
-DESIGNATION : Nurse 

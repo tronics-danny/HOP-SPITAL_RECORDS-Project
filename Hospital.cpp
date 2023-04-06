@@ -7,6 +7,16 @@ using namespace std;
 
 void Main_menu();
 
+void exitCode(string _exitcode)
+{
+    string Exit_code="hop_exit";
+    if((_exitcode==Exit_code))
+    {
+        system("cls");
+        Main_menu();
+    }
+}
+
 class Landing_page
 {
 public:
@@ -36,21 +46,31 @@ public:
         {
             cout<<"\t\tFIRST NAME     : ";
             cin>>First_Name;
+            exitCode(First_Name);
+
             Reg_file<<"USER NAME : ";
             Reg_file<<First_Name;
             cout<<"\t\tLAST NAME      : ";
             cin>>Last_Name;
+            exitCode(Last_Name);
+
             Reg_file<<" "<<Last_Name;
             cout<<"\t\tEMAIL          : ";
             cin>>Email;
+            exitCode(Email);
+            
             Reg_file<<"\nUSER EMAIL: "<<endl;
             Reg_file<<Email;
             cout<<"\t\tID No.         : ";
             cin>>Id;
+            exitCode(Id);
+
             Reg_file<<"\nUSER ID   : ";
             Reg_file<<Id;
             cout<<"\t\tPASSWORD       : ";
             cin>>Password;
+            exitCode(Password);
+
             Reg_file<<"\nPASSWORD  : "<<endl;
             Reg_file<<Password<<endl;
 
@@ -70,6 +90,7 @@ public:
             cout<<"\t\t\t4. Support staff "<<endl;
             cout<<"\t\tEnter your choice here :  ";
             cin>>choice_reg;
+            exitCode(choice_reg);
 
                 fstream Reg_file;
                 if(choice_reg=="1")
@@ -79,7 +100,7 @@ public:
                     {
                         Reg_file<<"DESIGNATION : Doctor";
                     }Reg_file.close();
-                        static int choice_d;
+                        static string choice_d;
                                 
                         cout<<"\n\n\t\tKindly choose Specialization below "<<endl;
                         cout<<"\t\t\t1. Dentist "<<endl;
@@ -88,24 +109,25 @@ public:
                         cout<<"\t\t\t4. Primary Care Physician (PCP) "<<endl;
                         cout<<"\t\tEnter your choice here :  ";
                         cin>>choice_d;
+                        exitCode(choice_d);
                         cout<<endl;
 
                         Reg_file.open("registration_file.txt", ios::app);
                         if(Reg_file.is_open())
                         {
-                            if(choice_d==1)
+                            if(choice_d=="1")
                             {
                                 Reg_file<<"\nSPECIALTY : Dentist\n\n";
                             }
-                            else if(choice_d==2)
+                            else if(choice_d=="2")
                             {
                                 Reg_file<<"\nSPECIALTY : Ophthalmologist\n\n";
                             }
-                            else if(choice_d==3)
+                            else if(choice_d=="3")
                             {
                                 Reg_file<<"\nSPECIALTY : Gynaecologist\n\n";
                             }
-                            else if(choice_d==4)
+                            else if(choice_d=="4")
                             {
                                 Reg_file<<"\nSPECIALTY : Primary Care Physician (PCP)\n\n";
                             }
@@ -116,7 +138,7 @@ public:
                             } 
                         }Reg_file.close();
 
-                        if(choice_d==1)
+                        if(choice_d=="1")
                         {
                             system("cls");
                             cout<<"\t\t\tTHANK YOU FOR REGISTERING WITH THE HOPE HOSPITAL RECORDS\n"<<endl;
@@ -124,7 +146,7 @@ public:
                             
                             Main_menu();
                         }
-                        else if (choice_d==2)
+                        else if (choice_d=="2")
                         {
                             system("cls");
                             cout<<"\t\t\tTHANK YOU FOR REGISTERING WITH THE HOPE HOSPITAL RECORDS\n"<<endl;
@@ -132,7 +154,7 @@ public:
                             
                             Main_menu();
                         }
-                        else if (choice_d==3)
+                        else if (choice_d=="3")
                         {
                             system("cls");
                             cout<<"\t\t\tTHANK YOU FOR REGISTERING WITH THE HOPE HOSPITAL RECORDS\n"<<endl;
@@ -140,7 +162,7 @@ public:
                             
                             Main_menu();
                         }
-                        else if (choice_d==4)
+                        else if (choice_d=="4")
                         {
                             system("cls");
                             cout<<"\t\t\tTHANK YOU FOR REGISTERING WITH THE HOPE HOSPITAL RECORDS\n"<<endl;
@@ -207,8 +229,8 @@ public:
 class Sub_menu_page : public Registration_page
 {
 public:
-    string Pf_Name, Pl_Name, Gender,Next_of_kin_Fname,Next_of_kin_Sname; 
-    int Age, P_phone, Next_of_kin_phone,P_Id;
+    string Pf_Name, Pl_Name, Gender,Next_of_kin_Fname,Next_of_kin_Sname,P_Id; 
+    string Age, P_phone, Next_of_kin_phone;
     string P_diagnostics, P_prescription, t_date;
     //void sub_menu();
     void Add_patient()
@@ -232,58 +254,70 @@ public:
             cout<<"\t\tEnter Patient details below."<<endl;
             cout<<"\t\tFIRST NAME       : ";
             cin>>Pf_Name;
+            exitCode(Pf_Name);
             Add_file<<"\n\nPATIENT NAME           : ";
             Add_file<<Pf_Name;
             cout<<"\n\t\tLAST NAME        : ";
             cin>>Pl_Name;
+            exitCode(Pl_Name);
             Add_file<<" "<<Pl_Name;
 
             cout<<"\n\t\tID NUMBER        : ";
             cin>>P_Id;
+            exitCode(P_Id);
             Add_file<<"\nID NUMBER              : ";
             Add_file<<P_Id;
 
             cout<<"\n\t\tGENDER           : ";
             cin>>Gender;
+            exitCode(Gender);
             Add_file<<"\nGENDER                 : ";
             Add_file<<Gender;
 
             cout<<"\n\t\tAGE               : ";
             cin>>Age;
+            exitCode(Age);
             Add_file<<"\nAGE                    : ";
             Add_file<<Age;
 
             cout<<"\n\t\tPHONE NUMBER      : ";
             cin>>P_phone;
+            exitCode(P_phone);
             Add_file<<"\nPHONE NUMBER           : ";
             Add_file<<P_phone;
 
             cout<<"\n\t\tNEXT OF KIN FIRST NAME   : ";
             cin>>Next_of_kin_Fname;
+            exitCode(Next_of_kin_Fname);
             Add_file<<"\nNEXT OF KIN FIRST NAME : ";
             Add_file<<Next_of_kin_Fname;
             cout<<"\n\t\tNEXT OF KIN SECOND NAME  : ";
             cin>>Next_of_kin_Sname;
+            exitCode(Next_of_kin_Sname);
             Add_file<<"\nNEXT OF KIN SECOND NAME: ";
             Add_file<<Next_of_kin_Sname;
             cout<<"\n\t\tNEXT OF KIN PHONE : ";
             cin>>Next_of_kin_phone;cin.ignore();
+            exitCode(Next_of_kin_phone);
             Add_file<<"\nNEXT OF KIN PHONE      : ";
             Add_file<<Next_of_kin_phone;
 
             cout<<"\n\t\tEnter Diagnostic details below.\n";
             cout<<"\t\tDESCRIBE SICKNESS :";
             getline(cin,P_diagnostics);
+            exitCode(P_diagnostics);
             Add_file<<"\nSICKNESS DESCRIPTION   : ";
             Add_file<<P_diagnostics;
 
             cout<<"\n\t\tPRESCRIPTION      :";
             getline(cin,P_prescription);
+            exitCode(P_prescription);
             Add_file<<"\nPRESCRIPTION           : ";
             Add_file<<P_prescription;
 
             cout<<"\n\t\tDATE OF TREATMENT :";
             getline(cin,t_date);
+            exitCode(t_date);
             Add_file<<"\nDATE OF TREATMENT      : ";
             Add_file<<t_date;
 
@@ -362,6 +396,7 @@ public:
         cout<<"\t\t\t4. EXIT. \n\n"<<endl;
         cout<<"\t\tEnter choice here : ";
         cin>>choice_sm;
+        exitCode(choice_sm);
 
         if(choice_sm=="1")
         {
@@ -406,8 +441,10 @@ public:
         cout<<"\t\tPlease enter your login details below. \n"<<endl;
         cout<<"\t\tEMAIL     : ";
         cin>>user_email;
+        exitCode(user_email);
         cout<<"\t\tPASSWORD  : ";
-        cin>>user_pass;       
+        cin>>user_pass;
+        exitCode(user_pass);       
 
         //(Password and email authentication at this point )
             
@@ -472,7 +509,8 @@ void Main_menu()
     cout<<"\t| Press 2 to REGISTER                         |"<<endl;
     cout<<"\t| Press 3 to EXIT                             |"<<endl;
     cout<<"\n\t\t Please Enter your choice : ";
-    cin>>choice;//cin.ignore();
+    cin>>choice;cin.ignore();
+    exitCode(choice);
     cout<<endl;
 
         Registration_page rp;
