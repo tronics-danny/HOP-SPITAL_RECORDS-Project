@@ -5,7 +5,6 @@
 
 using namespace std;
 
-
 void Main_menu();
 
 class Landing_page
@@ -15,15 +14,12 @@ public:
     {
         Main_menu();
     }
-
 };
 
 class Registration_page
 {
 public:
-   string First_Name,Last_Name,Email,Password,Id;
-    
-
+    string First_Name,Last_Name,Email,Password,Id;    
     void regis()
     {
         system("cls");
@@ -59,15 +55,13 @@ public:
             Reg_file<<Password<<endl;
 
             Reg_file.close();
-
-        }
-
-        
+        }       
         cout<<endl; 
     }
+
     void designation()
         {
-            static int choice_reg;
+            static string choice_reg;
         
             cout<<"\t\tKindly choose designation below.  "<<endl;
             cout<<"\t\t\t1. Doctor "<<endl;
@@ -78,138 +72,135 @@ public:
             cin>>choice_reg;
 
                 fstream Reg_file;
-                switch (choice_reg)
+                if(choice_reg=="1")
                 {
-                    case 1:
+                    Reg_file.open("registration_file.txt", ios::app);
+                    if(Reg_file.is_open())
+                    {
+                        Reg_file<<"DESIGNATION : Doctor";
+                    }Reg_file.close();
+                        static int choice_d;
+                                
+                        cout<<"\n\n\t\tKindly choose Specialization below "<<endl;
+                        cout<<"\t\t\t1. Dentist "<<endl;
+                        cout<<"\t\t\t2. Ophthalmologist "<<endl;
+                        cout<<"\t\t\t3. Gynaecologist "<<endl;
+                        cout<<"\t\t\t4. Primary Care Physician (PCP) "<<endl;
+                        cout<<"\t\tEnter your choice here :  ";
+                        cin>>choice_d;
+                        cout<<endl;
+
                         Reg_file.open("registration_file.txt", ios::app);
                         if(Reg_file.is_open())
                         {
-                            Reg_file<<"DESIGNATION : Doctor";
-                        }Reg_file.close();
-                            static int choice_d;
-                                    
-                            cout<<"\n\n\t\tKindly choose Specialization below "<<endl;
-                            cout<<"\t\t\t1. Dentist "<<endl;
-                            cout<<"\t\t\t2. Ophthalmologist "<<endl;
-                            cout<<"\t\t\t3. Gynaecologist "<<endl;
-                            cout<<"\t\t\t4. Primary Care Physician (PCP) "<<endl;
-                            cout<<"\t\tEnter your choice here :  ";
-                            cin>>choice_d;
-                            cout<<endl;
-
-                            Reg_file.open("registration_file.txt", ios::app);
-                            if(Reg_file.is_open())
-                            {
-                               if(choice_d==1)
-                                {
-                                    Reg_file<<"\n\tSPECIALTY : Dentist\n\n";
-                                }
-                                else if(choice_d==2)
-                                {
-                                    Reg_file<<"\n\tSPECIALTY : Ophthalmologist\n\n";
-                                }
-                                else if(choice_d==3)
-                                {
-                                    Reg_file<<"\n\tSPECIALTY : Gynaecologist\n\n";
-                                }
-                                else if(choice_d==4)
-                                {
-                                    Reg_file<<"\n\tSPECIALTY : Primary Care Physician (PCP)\n\n";
-                                }
-                                else
-                                {
-                                cout<<endl<<"\t\tKindly only choose from the options given. "<<endl;
-                                designation(); 
-                                } 
-                            }Reg_file.close();
-                                            
-                            
                             if(choice_d==1)
                             {
-                                system("cls");
-                                cout<<"\t\t\tTHANK YOU FOR REGISTERING WITH THE HOPE HOSPITAL RECORDS\n"<<endl;
-                                cout<<"\t\t\t           YOUR DETAILS ARE SAFE WITH US"<<endl;
-                                
-                                Main_menu();
+                                Reg_file<<"\nSPECIALTY : Dentist\n\n";
                             }
-                            else if (choice_d==2)
+                            else if(choice_d==2)
                             {
-                                system("cls");
-                                cout<<"\t\t\tTHANK YOU FOR REGISTERING WITH THE HOPE HOSPITAL RECORDS\n"<<endl;
-                                cout<<"\t\t\t           YOUR DETAILS ARE SAFE WITH US"<<endl;
-                                
-                                Main_menu();
+                                Reg_file<<"\nSPECIALTY : Ophthalmologist\n\n";
                             }
-                            else if (choice_d==3)
+                            else if(choice_d==3)
                             {
-                                system("cls");
-                                cout<<"\t\t\tTHANK YOU FOR REGISTERING WITH THE HOPE HOSPITAL RECORDS\n"<<endl;
-                                cout<<"\t\t\t           YOUR DETAILS ARE SAFE WITH US"<<endl;
-                                
-                                Main_menu();
+                                Reg_file<<"\nSPECIALTY : Gynaecologist\n\n";
                             }
-                            else if (choice_d==4)
+                            else if(choice_d==4)
                             {
-                                system("cls");
-                                cout<<"\t\t\tTHANK YOU FOR REGISTERING WITH THE HOPE HOSPITAL RECORDS\n"<<endl;
-                                cout<<"\t\t\t           YOUR DETAILS ARE SAFE WITH US"<<endl;
-                                
-                                Main_menu();
+                                Reg_file<<"\nSPECIALTY : Primary Care Physician (PCP)\n\n";
                             }
                             else
                             {
-                                cout<<endl<<"\t\tKindly only choose from the options given. "<<endl;
-                                designation();
-                            }                                          
+                            cout<<endl<<"\tKindly only choose from the options given. "<<endl;
+                            designation(); 
+                            } 
+                        }Reg_file.close();
+
+                        if(choice_d==1)
+                        {
+                            system("cls");
+                            cout<<"\t\t\tTHANK YOU FOR REGISTERING WITH THE HOPE HOSPITAL RECORDS\n"<<endl;
+                            cout<<"\t\t\t           YOUR DETAILS ARE SAFE WITH US"<<endl;
+                            
+                            Main_menu();
+                        }
+                        else if (choice_d==2)
+                        {
+                            system("cls");
+                            cout<<"\t\t\tTHANK YOU FOR REGISTERING WITH THE HOPE HOSPITAL RECORDS\n"<<endl;
+                            cout<<"\t\t\t           YOUR DETAILS ARE SAFE WITH US"<<endl;
+                            
+                            Main_menu();
+                        }
+                        else if (choice_d==3)
+                        {
+                            system("cls");
+                            cout<<"\t\t\tTHANK YOU FOR REGISTERING WITH THE HOPE HOSPITAL RECORDS\n"<<endl;
+                            cout<<"\t\t\t           YOUR DETAILS ARE SAFE WITH US"<<endl;
+                            
+                            Main_menu();
+                        }
+                        else if (choice_d==4)
+                        {
+                            system("cls");
+                            cout<<"\t\t\tTHANK YOU FOR REGISTERING WITH THE HOPE HOSPITAL RECORDS\n"<<endl;
+                            cout<<"\t\t\t           YOUR DETAILS ARE SAFE WITH US"<<endl;
+                            
+                            Main_menu();
+                        }
+                        else
+                        {
+                            cout<<endl<<"\t\tKindly only choose from the options given. "<<endl;
+                            designation();
+                        }                                                             
+                }   
+                else if(choice_reg=="2")
+                {
+                    Reg_file.open("registration_file.txt", ios::app);
+                    if(Reg_file.is_open())
+                    {
+                        Reg_file<<"DESIGNATION : Pharmacist\n\n";
+                    }Reg_file.close();
+
+                    system("cls");
+                    cout<<"\t\t\tTHANK YOU FOR REGISTERING WITH THE HOPE HOSPITAL RECORDS\n"<<endl;
+                    cout<<"\t\t\t           YOUR DETAILS ARE SAFE WITH US"<<endl;
                     
-                        break;   
-                    case 2:
-                        Reg_file.open("registration_file.txt", ios::app);
-                        if(Reg_file.is_open())
-                        {
-                            Reg_file<<"DESIGNATION : Pharmacist\n\n";
-                        }Reg_file.close();
-
-                        system("cls");
-                        cout<<"\t\t\tTHANK YOU FOR REGISTERING WITH THE HOPE HOSPITAL RECORDS\n"<<endl;
-                        cout<<"\t\t\t           YOUR DETAILS ARE SAFE WITH US"<<endl;
-                        
-                        Main_menu();
-                        break;
-                    case 3:
-                        Reg_file.open("registration_file.txt", ios::app);
-                        if(Reg_file.is_open())
-                        {
-                            Reg_file<<"DESIGNATION : Nurse \n\n";
-                        }Reg_file.close();
-
-                        system("cls");
-                        cout<<"\t\t\tTHANK YOU FOR REGISTERING WITH THE HOPE HOSPITAL RECORDS\n"<<endl;
-                        cout<<"\t\t\t           YOUR DETAILS ARE SAFE WITH US"<<endl;
-                        
-                        Main_menu();
-                        break;
-                    case 4:
-                        Reg_file.open("registration_file.txt", ios::app);
-                        if(Reg_file.is_open())
-                        {
-                            Reg_file<<"DESIGNATION : Support Staff\n\n";
-                        }Reg_file.close();
-
-                        system("cls");
-                        cout<<"\t\t\tTHANK YOU FOR REGISTERING WITH THE HOPE HOSPITAL RECORDS\n"<<endl;
-                        cout<<"\t\t\t           YOUR DETAILS ARE SAFE WITH US"<<endl;
-                        Main_menu();
-                        break;
-                    default:
-                        system("cls");
-                        cout<<"\t\t\tKindly only choose from the options given below"<<endl;
-                        Main_menu();
-                        
+                    Main_menu();
                 }
+                else if(choice_reg=="3")
+                {
+                    Reg_file.open("registration_file.txt", ios::app);
+                    if(Reg_file.is_open())
+                    {
+                        Reg_file<<"DESIGNATION : Nurse \n\n";
+                    }Reg_file.close();
 
-               
-            
+                    system("cls");
+                    cout<<"\t\t\tTHANK YOU FOR REGISTERING WITH THE HOPE HOSPITAL RECORDS\n"<<endl;
+                    cout<<"\t\t\t           YOUR DETAILS ARE SAFE WITH US"<<endl;
+                    
+                    Main_menu();
+                }
+                else if(choice_reg=="4")
+                {
+                    Reg_file.open("registration_file.txt", ios::app);
+                    if(Reg_file.is_open())
+                    {
+                        Reg_file<<"DESIGNATION : Support Staff\n\n";
+                    }Reg_file.close();
+
+                    system("cls");
+                    cout<<"\t\t\tTHANK YOU FOR REGISTERING WITH THE HOPE HOSPITAL RECORDS\n"<<endl;
+                    cout<<"\t\t\t           YOUR DETAILS ARE SAFE WITH US"<<endl;
+                    Main_menu();
+                }
+                else
+                {
+                    system("cls");
+                    cout<<"\t\t\tKindly only choose from the options given below"<<endl;
+                    Main_menu();                      
+                }
         }  
 };
 
@@ -276,7 +267,7 @@ public:
             Add_file<<"\nNEXT OF KIN SECOND NAME: ";
             Add_file<<Next_of_kin_Sname;
             cout<<"\n\t\tNEXT OF KIN PHONE : ";
-            cin>>Next_of_kin_phone;
+            cin>>Next_of_kin_phone;cin.ignore();
             Add_file<<"\nNEXT OF KIN PHONE      : ";
             Add_file<<Next_of_kin_phone;
 
@@ -300,8 +291,6 @@ public:
             sub_menu();
         } 
     }
-
-
     void Acc_patient()
     {
         fstream Acc_file;
@@ -326,12 +315,11 @@ public:
             while(getline(Acc_file,p_line))
             {
                 cout<<"\t\t\t\t"<<p_line<<endl;
-                
             }
             Acc_file.close();            
         }
-
     }
+
     void Acc_staff()
     {
         fstream Reg_file;
@@ -350,19 +338,19 @@ public:
             cout<<"\t\t\t            HOPE HOSPITAL RECORDS              \n\n\n"<<endl;
             cout<<"\t\t\t_____________                 __________________\n\n"<<endl;
             cout<<"                                                       \n\n"<<endl;
+            cout<<"\t\tThe following shows the list of Staff names and their designations"<<endl;
             string line;
             while(getline(Reg_file,line))
-            {
-                cout<<"\t\tThe following shows the list of Staff names and their designations"<<endl;
+            { 
                 cout<<"\t\t\t\t"<<line<<endl;
             }
             Reg_file.close();            
-        }
-            
+        }     
     }
+
     void sub_menu()
     {
-        static int choice_sm;
+        static string choice_sm;
         system("cls");
         cout<<"\t\t\t________________________________________________\n\n"<<endl;
         cout<<"\t\t\t            HOPE HOSPITAL RECORDS              \n\n\n"<<endl;
@@ -375,44 +363,33 @@ public:
         cout<<"\t\tEnter choice here : ";
         cin>>choice_sm;
 
-        switch(choice_sm)
+        if(choice_sm=="1")
         {
-            case 1:
-            {
-                system("cls");
-                Add_patient();
-                break;
-            }
-            case 2:
-            {
-                system("cls");
-                Acc_patient();
-                break;
-            }
-            case 3:
-            {
-                system("cls");
-                Acc_staff();
-                break;
-            }
-            case 4:
-            {
-                system("cls");
-                Main_menu();
-                break;
-            }
-            default:
-            {
-                system("cls");
-                cout<<"Kindly enter a valid choice."<<endl;
-                sub_menu();
-
-            }
+            system("cls");
+            Add_patient();
         }
-
-
-    }
-    
+        else if(choice_sm=="2")
+        {
+            system("cls");
+            Acc_patient();
+        }
+        else if(choice_sm=="3")
+        {
+            system("cls");
+            Acc_staff();
+        }
+        else if(choice_sm=="4")
+        {
+            system("cls");
+            Main_menu();
+        }
+        else
+        {
+            system("cls");
+            cout<<"Kindly enter a valid choice."<<endl;
+            sub_menu();
+        }
+    } 
 };
 
 class Login_page: public Registration_page
@@ -483,8 +460,8 @@ public:
 
 void Main_menu()
 {
-    static  int choice;
-
+    string choice;
+    
     cout<<"\t\t\t________________________________________________\n\n"<<endl;
     cout<<"\t\t\t           HOPE HOSPITAL RECORDS              \n\n\n"<<endl;
     cout<<"\t\t\t         WELCOME TO THE LOGIN PAGE              \n\n"<<endl;
@@ -495,14 +472,49 @@ void Main_menu()
     cout<<"\t| Press 2 to REGISTER                         |"<<endl;
     cout<<"\t| Press 3 to EXIT                             |"<<endl;
     cout<<"\n\t\t Please Enter your choice : ";
-    cin>>choice;
+    cin>>choice;//cin.ignore();
     cout<<endl;
 
         Registration_page rp;
         Registration_page des;
-        Login_page lp;  
+        Login_page lp; 
 
-        switch(choice)
+        if(choice=="1")
+        {
+            system("cls");
+            lp.login();
+        }
+        else if (choice=="2")
+        {
+            system("cls");
+            rp.regis();
+            des.designation();
+        }
+        else if (choice=="3")
+        {
+            system("cls");
+            cout<<"\t\t\t________________________________________________\n\n"<<endl;
+            cout<<"\t\t\t                   HOPE HOSPITAL               \n\n"<<endl;
+            cout<<"\t\t\t        \"WHERE THE ART OF MEDICINE IS LOVED, "<<endl;
+            cout<<"\t\t\t         THERE IS ALSO LOVE FOR HUMANITY\"\n\n"<<endl;
+            cout<<"\t\t\t_____________                 __________________\n\n"<<endl;
+            cout<<"\t\t\t                THANK YOU!";
+        }
+        else
+        {
+            system("cls");
+            cout<<"\t\t\t Please Select from the options given below!!! \n"<<endl;
+            Main_menu();
+        }
+        
+        
+        /* if(!(cin>>choice) || !(choice==1 || choice==2 || choice==3))
+        {
+            system("cls");
+            cout<<"\t\t\t Please Select from the options given below!!! \n"<<endl;
+            Main_menu();
+        } */
+        /* switch(choice)
         {
             case 1:
                 system("cls");
@@ -526,15 +538,11 @@ void Main_menu()
                 system("cls");
                 cout<<"\t\t\t Please Select from the options given below!!! \n"<<endl;
                 Main_menu();
-        }
+        } */
 }
-
-
 int main()
-{
-    
+{ 
     Landing_page main_p;
-
     system("pause>null");
 }
 

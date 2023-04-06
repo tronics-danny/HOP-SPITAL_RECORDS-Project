@@ -23,3 +23,27 @@ NEXT OF KIN PHONE      : 746238192
 SICKNESS DESCRIPTION   : 
 PRESCRIPTION           : qghaUNSUQUWHYNJND NSHnsjqi,qwbuqhdq
 DATE OF TREATMENT      : 12-7-89-12122
+
+PATIENT NAME           : taylo hebert
+ID NUMBER              : 115678
+GENDER                 : male
+AGE                    : 25
+PHONE NUMBER           : 78557252
+NEXT OF KIN FIRST NAME : were
+NEXT OF KIN SECOND NAME: hebert
+NEXT OF KIN PHONE      : 789563452
+SICKNESS DESCRIPTION   : 
+PRESCRIPTION           : asdfghj
+DATE OF TREATMENT      : 23456876
+
+PATIENT NAME           : kjhagvsdh akdgbas
+ID NUMBER              : 345677654
+GENDER                 : mae
+AGE                    : 34
+PHONE NUMBER           : 7562553
+NEXT OF KIN FIRST NAME : malendu
+NEXT OF KIN SECOND NAME: dfghj
+NEXT OF KIN PHONE      : 8765
+SICKNESS DESCRIPTION   : asdfghjlak aludkai wzqsai qwzjhjiqwks
+PRESCRIPTION           : kqwdbausjhd lquwdbuahs oqw8uehsisoqs qow8uhdjis
+DATE OF TREATMENT      : 0987654567
